@@ -6,11 +6,49 @@ body {
   font: 10px sans-serif;
 }
 
+header, svg {
+  display: block;
+  width: 805px;
+  margin: 0 auto;
+}
+
 p {
   margin-left: 40px;
   font-size: 20px;
   font-family: helvetica;
   color: black;
+}
+
+nav {
+  margin-bottom: 10px;
+}
+
+nav h1 {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  font-size: 14px;
+}
+
+button {
+  background-color: rgba(225,225,225);
+  opacity: 0.8;
+  border: none;
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.party-d {
+  background-color: aliceblue;
+}
+.party-r {
+  background-color: red;
+}
+button:active {
+  background-color: rgba(205,205,205,1);
+}
+button:disabled {
+  /* your disabled styles here! */
 }
 
 .axis path,
@@ -30,10 +68,13 @@ p {
 
 </style>
 <body>
+<header class="main-nav">
+  <nav class="topics"><h1>By Topic:</h1></nav>
+  <nav class="candidates"><h1>By Candidate:</h1></nav>
+</header>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-
-var i = -1;
 
 var margin = {top: 80, right: 80, bottom: 30, left: 40},
     width = 800 - margin.left - margin.right,
@@ -48,10 +89,8 @@ var y = d3.scale.linear()
 // dem and rep colors
 var dem_colors = ["#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#276695"]
 var gop_colors = ["#f3bdbd", "#eb9292", "#e36767", "#d62727", "#aa1f1f"]
+var topic_colors = ["#c6dbef", "#6baed6", "#f3bdbd", "#e36767", "#d62727"]
 // colors
-
-var color = d3.scale.ordinal()
-  .range(["#c6dbef", "#6baed6", "#f3bdbd", "#e36767", "#d62727"]);
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -62,10 +101,81 @@ var yAxis = d3.svg.axis()
     .orient("left")
     .tickFormat(d3.format(".2s"));
 
-var all_data = ["0_gun_control.csv", "1_primaries.csv", "2_health_edu.csv", "3_media_promo.csv", "4_policy.csv"]
+var topics = [{
+  csv: '0_gun_control.csv',
+  title: 'Gun Control'
+}, {
+  csv: '1_primaries.csv',
+  title: 'Primaries'
+}, {
+  csv: '2_health_edu.csv',
+  title: 'Health Care and Education'
+}, {
+  csv: '3_media_promo.csv',
+  title: 'Media/Self-Promotion'
+}, {
+  csv: '4_policy.csv',
+  title: 'Foreign/Economic Policy'
+}];
 
-window.onclick = function() {
-  i=i+1;
+var candidates = [{
+  csv: 'clinton.csv',
+  label: 'Hillary Clinton',
+  party: 'd'
+}, {
+  csv: 'sanders.csv',
+  label: 'Bernie Sanders',
+  party: 'd'
+}, {
+  csv: 'cruz.csv',
+  label: 'Ted Cruz',
+  party: 'r'
+}, {
+  csv: 'rubio.csv',
+  label: 'RoboRubio',
+  party: 'r'
+}, {
+  csv: 'trump.csv',
+  label: 'Donald Drumpf',
+  party: 'r'
+}];
+
+topics.forEach(function (topic) {
+  var button = $('<button>');
+  button.text(topic.title);
+  $('.topics').append(button);
+  button.on('click', function () {
+    $(this).parents('.main-nav').find('button').attr('disabled', false);
+    $(this).attr('disabled', true);
+    showGraphByCsv({
+      csv: topic.csv,
+      label: "Presidential Candidate Twitter Topics Over Time: " + topic.title,
+      colors: topic_colors
+    });
+  });
+});
+
+candidates.forEach(function (candidate) {
+  var button = $('<button>');
+  button.text(candidate.label);
+  button.addClass('party-' + candidate.party);
+  $('.candidates').append(button);
+  button.on('click', function () {
+    $(this).parents('.main-nav').find('button').attr('disabled', false);
+    $(this).attr('disabled', true);
+    var colorScheme = candidate.party === 'd' ? dem_colors : gop_colors;
+    showGraphByCsv({
+      csv: candidate.csv,
+      label: 'Candidate: ' + candidate.label,
+      colors: colorScheme
+    });
+  });
+});
+
+function showGraphByCsv (options) {
+  var csv = options.csv;
+  var label = options.label;
+  var colors = options.colors;
 
   d3.select("svg").remove();
 
@@ -75,7 +185,10 @@ window.onclick = function() {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.csv(all_data[i], function(error, data) {
+  var color = d3.scale.ordinal()
+    .range(colors);
+
+  d3.csv(csv, function(error, data) {
     if (error) throw error;
 
     color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
@@ -106,16 +219,13 @@ window.onclick = function() {
         .style("text-anchor", "end")
         .text("Number of Tweets");
 
-// add title
-    var title = "Presidential Candidate Twitter Topics Over Time: " + all_data[i]
-
     svg.append("text")
         .attr("x", (width / 2))
         .attr("y", 0 - (margin.top / 1.5))
         .attr("text-anchor", "middle")
         .style("font-size", "20px")
         .style("text-decoration", "bold")
-        .text(title);
+        .text(label);
 
     var date = svg.selectAll(".date")
         .data(data)
