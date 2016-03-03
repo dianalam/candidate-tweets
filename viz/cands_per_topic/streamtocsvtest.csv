@@ -1,0 +1,41 @@
+key,date,value
+retweets/other,2015-07-01,12
+retweets/other,2015-08-01,56
+retweets/other,2015-09-01,68
+retweets/other,2015-10-01,115
+retweets/other,2015-11-01,78
+retweets/other,2015-12-01,52
+retweets/other,2016-01-01,101
+retweets/other,2016-02-01,114
+primaries,2015-07-01,6
+primaries,2015-08-01,20
+primaries,2015-09-01,31
+primaries,2015-10-01,65
+primaries,2015-11-01,53
+primaries,2015-12-01,26
+primaries,2016-01-01,76
+primaries,2016-02-01,141
+health care/education,2015-07-01,20
+health care/education,2015-08-01,67
+health care/education,2015-09-01,35
+health care/education,2015-10-01,58
+health care/education,2015-11-01,53
+health care/education,2015-12-01,58
+health care/education,2016-01-01,90
+health care/education,2016-02-01,107
+media/self-promo,2015-07-01,8
+media/self-promo,2015-08-01,34
+media/self-promo,2015-09-01,56
+media/self-promo,2015-10-01,47
+media/self-promo,2015-11-01,40
+media/self-promo,2015-12-01,42
+media/self-promo,2016-01-01,59
+media/self-promo,2016-02-01,69
+econ/foreign policy,2015-07-01,26
+econ/foreign policy,2015-08-01,66
+econ/foreign policy,2015-09-01,103
+econ/foreign policy,2015-10-01,172
+econ/foreign policy,2015-11-01,167
+econ/foreign policy,2015-12-01,122
+econ/foreign policy,2016-01-01,138
+econ/foreign policy,2016-02-01,142
