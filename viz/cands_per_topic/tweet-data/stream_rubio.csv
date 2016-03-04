@@ -1,0 +1,71 @@
+key,date,value
+retweets/other,2015-01-01,1
+retweets/other,2015-02-01,1
+retweets/other,2015-03-01,1
+retweets/other,2015-04-01,23
+retweets/other,2015-05-01,43
+retweets/other,2015-06-01,47
+retweets/other,2015-07-01,31
+retweets/other,2015-08-01,22
+retweets/other,2015-09-01,10
+retweets/other,2015-10-01,28
+retweets/other,2015-11-01,20
+retweets/other,2015-12-01,13
+retweets/other,2016-01-01,35
+retweets/other,2016-02-01,23
+primaries,2015-01-01,10
+primaries,2015-02-01,10
+primaries,2015-03-01,1
+primaries,2015-04-01,59
+primaries,2015-05-01,90
+primaries,2015-06-01,30
+primaries,2015-07-01,62
+primaries,2015-08-01,27
+primaries,2015-09-01,54
+primaries,2015-10-01,68
+primaries,2015-11-01,56
+primaries,2015-12-01,94
+primaries,2016-01-01,147
+primaries,2016-02-01,233
+health care/education,2015-01-01,8
+health care/education,2015-02-01,4
+health care/education,2015-03-01,6
+health care/education,2015-04-01,28
+health care/education,2015-05-01,31
+health care/education,2015-06-01,19
+health care/education,2015-07-01,6
+health care/education,2015-08-01,16
+health care/education,2015-09-01,7
+health care/education,2015-10-01,8
+health care/education,2015-11-01,21
+health care/education,2015-12-01,10
+health care/education,2016-01-01,26
+health care/education,2016-02-01,18
+media/self-promo,2015-01-01,4
+media/self-promo,2015-02-01,0
+media/self-promo,2015-03-01,6
+media/self-promo,2015-04-01,43
+media/self-promo,2015-05-01,38
+media/self-promo,2015-06-01,8
+media/self-promo,2015-07-01,37
+media/self-promo,2015-08-01,46
+media/self-promo,2015-09-01,49
+media/self-promo,2015-10-01,61
+media/self-promo,2015-11-01,54
+media/self-promo,2015-12-01,50
+media/self-promo,2016-01-01,97
+media/self-promo,2016-02-01,58
+econ/foreign policy,2015-01-01,3
+econ/foreign policy,2015-02-01,4
+econ/foreign policy,2015-03-01,3
+econ/foreign policy,2015-04-01,23
+econ/foreign policy,2015-05-01,57
+econ/foreign policy,2015-06-01,10
+econ/foreign policy,2015-07-01,61
+econ/foreign policy,2015-08-01,36
+econ/foreign policy,2015-09-01,30
+econ/foreign policy,2015-10-01,28
+econ/foreign policy,2015-11-01,35
+econ/foreign policy,2015-12-01,40
+econ/foreign policy,2016-01-01,49
+econ/foreign policy,2016-02-01,26

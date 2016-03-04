@@ -1,0 +1,21 @@
+key,date,value
+retweets/other,2015-11-01,22
+retweets/other,2015-12-01,34
+retweets/other,2016-01-01,44
+retweets/other,2016-02-01,80
+primaries,2015-11-01,129
+primaries,2015-12-01,190
+primaries,2016-01-01,451
+primaries,2016-02-01,414
+health care/education,2015-11-01,41
+health care/education,2015-12-01,31
+health care/education,2016-01-01,34
+health care/education,2016-02-01,49
+media/self-promo,2015-11-01,92
+media/self-promo,2015-12-01,131
+media/self-promo,2016-01-01,197
+media/self-promo,2016-02-01,197
+econ/foreign policy,2015-11-01,135
+econ/foreign policy,2015-12-01,130
+econ/foreign policy,2016-01-01,95
+econ/foreign policy,2016-02-01,116
