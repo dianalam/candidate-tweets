@@ -1,5 +1,5 @@
 # investigating twitter strategies of the 2016 presidential candidates
-A project to assess the social media strategies and performance of the 2016 presidential candidates (Clinton, Cruz, Rubio, Sanders, Trump) by using NLP techniques on candidate tweets. Utilizes tf-idf weighting, k-means clustering, topic modeling/LDA, and pyLDAvis to determine key topics and trends in topics over time, across party lines, and amongst the individual candidates. Also utilizes vaderSentiment, pattern, and textblob for sentiment and mood analysis of text. Visualization using d3.js and jQuery. 
+A project to assess the social media strategies of the 2016 presidential candidates (Clinton, Cruz, Rubio, Sanders, Trump) by using NLP techniques on candidate tweets. Utilizes tf-idf weighting, k-means clustering, topic modeling/LDA, and pyLDAvis to determine key topics and trends in topics over time, across party lines, and amongst the individual candidates. Also utilizes vaderSentiment, pattern, and textblob for sentiment and mood analysis of text. Visualization using d3.js and jQuery. 
 
 For more information, see [my blog post](http://dianalam.github.io/2016/03/06/candidate-tweets.html). 
 For the final interactive viz and to explore the results yourself, see [this page](http://dianalam.github.io/assets/tweets.html).
